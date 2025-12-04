@@ -113,22 +113,16 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 title: "Turn add-ons into focused decisions, not footnotes",
                 metaPills: ["IA & Interaction", "Ownership: end-to-end design"],
                 subtitle: "Instead of burying add-ons, I elevated them to first-class citizens in the selection flow.",
-                whatINoticed: [
-                  "Analytics showed users clicking 'back' repeatedly to compare options.",
-                  "Heatmaps indicated low engagement with the feature comparison table."
+                bullets: [
+                  "Analytics showed users clicking 'back' repeatedly to compare options, and heatmaps indicated low engagement with the feature comparison table.",
+                  "Introduced a card-based layout for add-ons with clear value props and added a 'Learn more' modal for detailed feature breakdowns without leaving the flow.",
+                  "Prototyped 3 variations, tested with 5 users, and partnered with engineering to ensure the modal was accessible and performant.",
+                  "Designed the card component and modal interaction while writing the microcopy for the add-on descriptions."
                 ],
-                whatIDecided: [
-                  "Introduced a card-based layout for add-ons with clear value props.",
-                  "Added a 'Learn more' modal for detailed feature breakdowns without leaving the flow."
-                ],
-                howIDroveIt: [
-                  "Prototyped 3 variations and tested with 5 users to validate the card layout.",
-                  "Worked with engineering to ensure the modal was accessible and performant."
-                ],
-                myContribution: [
-                  "Designed the card component and modal interaction.",
-                  "Wrote the microcopy for the add-on descriptions."
-                ],
+                visual: {
+                  type: 'video',
+                  src: '/assets/zoom-pricing-1.mp4'
+                },
                 visualPlaceholderText: "Visual: New Add-on Cards with clear pricing and 'Add' buttons."
               }
             ]
@@ -158,21 +152,11 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 title: "Always-visible context",
                 metaPills: ["UX Pattern", "Trust"],
                 subtitle: "Users need to know what they are paying for at every step.",
-                whatINoticed: [
-                  "Users were opening new tabs to double-check pricing.",
-                  "Support tickets mentioned 'surprise charges' due to lack of clarity."
-                ],
-                whatIDecided: [
-                  "Implemented a sticky right-rail order summary that updates in real-time.",
-                  "Added clear line items for taxes and discounts."
-                ],
-                howIDroveIt: [
-                  "Collaborated with the backend team to ensure real-time pricing calculation.",
-                  "Advocated for transparency over 'hidden fees'."
-                ],
-                myContribution: [
-                  "Designed the responsive behavior of the sticky summary.",
-                  "Created the 'edit' interaction for line items."
+                bullets: [
+                  "Users were opening new tabs to double-check pricing, and support tickets mentioned 'surprise charges' due to lack of clarity.",
+                  "Implemented a sticky right-rail order summary that updates in real-time with explicit line items for taxes and discounts.",
+                  "Collaborated with the backend team on real-time calculation while advocating for transparency over 'hidden fees'.",
+                  "Designed the responsive behavior of the sticky summary and created the 'edit' interaction for each line item."
                 ],
                 visualPlaceholderText: "Visual: Sticky Order Summary component on the right side of the form."
               }
@@ -203,21 +187,11 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 title: "Usage at a glance",
                 metaPills: ["Dashboard Design", "Data Viz"],
                 subtitle: "Giving admins clear visibility into their seat usage and billing cycle.",
-                whatINoticed: [
-                  "Admins were over-purchasing seats because they couldn't see active usage.",
-                  "Billing contacts were often different from system admins."
-                ],
-                whatIDecided: [
-                  "Created a visual dashboard showing seat utilization and upcoming renewals.",
-                  "Separated 'Billing' and 'User Management' into distinct but connected views."
-                ],
-                howIDroveIt: [
-                  "Led a workshop with key account managers to understand admin pain points.",
-                  "Iterated on data visualization styles to match the new brand system."
-                ],
-                myContribution: [
-                  "End-to-end visual design of the dashboard widgets.",
-                  "Defined the logic for the 'utilization alert' states."
+                bullets: [
+                  "Admins were over-purchasing seats because they couldn't see active usage, and billing contacts were often different from system admins.",
+                  "Created a visual dashboard showing seat utilization and upcoming renewals, separating 'Billing' and 'User Management' into distinct but connected views.",
+                  "Led workshops with key account managers to capture pain points and iterated on data visualization styles to match the new brand system.",
+                  "Owned the end-to-end visual design of the dashboard widgets and defined the logic behind the utilization alert states."
                 ],
                 visualPlaceholderText: "Visual: Modern dashboard with usage graphs and clear action buttons."
               }
@@ -278,15 +252,15 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
           description: "疫情期间，Zoom 获得了大量个人用户和中小企业客户，但整体商业模式长期依赖销售团队，自助订阅体系相对滞后。恰恰是这批新增的中小企业用户，更倾向于在线上自主完成购买和升级，这让老旧的线上购买流程逐渐变成增长瓶颈：转化率偏低、非自愿流失偏高。",
           tags: ["UX 设计", "产品策略", "增长设计"],
           meta: [
-            { label: "角色", value: "首席产品设计师" },
-            { label: "时间", value: "6 个月" },
-            { label: "团队", value: "2 PM, 4 开发" }
+            { label: "角色", value: "产品设计师" },
+            { label: "时间", value: "2023" },
+            { label: "工具", value: "Figma • Contentsquare • UserTesting" }
           ],
           heroVisualPlaceholder: "视觉展示：仪表板截图或抽象表现",
           heroVideo: "/assets/zoom-hero.mp4",
         },
         metrics: {
-          title: "核心成果",
+          title: "",
           metrics: [
             {
               label: "核心附加产品转化率",
@@ -350,6 +324,7 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
               phaseNumber: 1,
               phaseLabel: "价格页",
               title: "价格页：从「只买会议」到「理解和购买附加产品」",
+              challengeTitle: "用户只听说过 Zoom 会议，不理解附加产品的价值",
               problems: [
                 {
                   title: "数据侧：有曝光、没转化",
@@ -358,7 +333,9 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                     "滚动到附加产品区域的用户超过 10%，但点击购买的不到 1%；",
                     "大量用户尝试点击卡片或 “More features”，但得不到更多信息。",
                     "哪怕点击了 Buy Now，很多用户也没有完成购买"
-                  ]
+                  ],
+                  image: "/assets/zoom-pricing-challenge-data.png",
+                  imageAlt: "低转化数据图表"
                 },
                 {
                   title: "用户侧：看不懂产品能做什么",
@@ -367,13 +344,36 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                     "卡片提供的信息过于匮乏；",
                     "文案太抽象，看起来像在讲功能，而不是告诉我能解决什么问题。"
                   ],
-                  quote: "What does unlimited concurrently editable boards even mean? I mean you have a whiteboard product that people collaborate on. That's the key feature, right?"
+                  quote: "What does unlimited concurrently editable boards even mean? I mean you have a whiteboard product that people collaborate on. That's the key feature, right?",
+                  image: "/assets/zoom-pricing-challenge-user.jpg",
+                  imageAlt: "用户访谈照片"
                 }
               ],
               userQuote: "价格页更多在罗列功能点，并没有把附加产品的使用场景和业务价值讲清楚，用户缺乏做购买决策所需的信息。",
               conclusionLabel: "结论",
               beforeLabel: "之前：旧版定价",
               beforePlaceholderText: "价格页更多在罗列功能点，并没有把附加产品的使用场景和业务价值讲清楚，用户缺乏做购买决策所需的信息。"
+            },
+            strategy: {
+              title: "设计策略",
+              subtitle: "多给信息，提供价值，与用户建立信任",
+              userInsight: {
+                content: "在访谈中，用户反复提到喜欢 Zoom 的一个重要原因是：界面简单易用，一看就会。但这种对「易用性」的信任，并没有延伸到附加产品上。基于这一洞察，我制定了三条策略：",
+              },
+              strategies: [
+                {
+                  title: "补足信息",
+                  content: "让用户弄清附加产品解决什么问题，有什么作用"
+                },
+                {
+                  title: "价值导向",
+                  content: "减少黑话，直观展示产品的价值"
+                },
+                {
+                  title: "决策前置",
+                  content: "在进入购买流程之前，就知道大致有哪些计划、价格区间和差异"
+                }
+              ]
             },
             moves: [
               {
@@ -382,14 +382,15 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 title: "卡片 + Learn more 弹窗",
                 metaPills: ["信息架构", "交互设计"],
                 subtitle: "让用户无需离开价格页，就能对产品有充足理解。",
-                whatINoticed: [],
-                whatIDecided: [
+                bullets: [
                   "在每张附加产品卡片上增加明显的 Learn more 按钮。",
                   "点击后弹出弹窗，提供额外信息。",
                   "确保用户无需离开价格页，就能对产品有充足理解。"
                 ],
-                howIDroveIt: [],
-                myContribution: [],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-pricing-1.mp4"
+                },
                 visualPlaceholderText: "视觉：带有 Learn More 按钮的新版卡片设计。"
               },
               {
@@ -398,13 +399,15 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 title: "让用户一眼看懂功能",
                 metaPills: ["视觉呈现", "跨团队协作"],
                 subtitle: "在 Learn more 弹窗中放入关键 UI 截图，让用户一眼看到这个产品大致怎么操作。",
-                whatINoticed: [],
-                whatIDecided: [
+                bullets: [
                   "在 Learn more 弹窗中放入关键 UI 截图，让用户一眼看到这个产品大致怎么操作。",
                   "我负责裁切与编排，保证所有图片有统一的视觉规范与高亮规则，每张截图都能说明一个关键使用场景。"
                 ],
-                howIDroveIt: [],
-                myContribution: [],
+                visual: {
+                  type: "image",
+                  src: "/assets/zoom-pricing-2.jpg",
+                  alt: "Learn more 弹窗 UI 截图"
+                },
                 visualPlaceholderText: "视觉：Learn More 弹窗中的产品 UI 截图展示。"
               },
               {
@@ -413,15 +416,16 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 title: "从「功能黑话」到「提供业务效益」",
                 metaPills: ["UX 文案", "价值主张"],
                 subtitle: "把原本偏内部/技术的话语，改写成用户语言。",
-                whatINoticed: [],
-                whatIDecided: [
-                  "和 PM、文案一起梳理每个附加产品的核心价值。",
-                  "把原本偏内部/技术的话语，改写成用户语言，例如：",
-                  "改版前：Unlimited concurrently editable boards",
+                bullets: [
+                  "和 PM、文案一起梳理每个附加产品的核心价值，把原本偏内部/技术的话语改写成用户语言。",
+                  "改版前：Unlimited concurrently editable boards。",
                   "改版后：Collaborate in real-time with others on whiteboards, both during and outside of meetings."
                 ],
-                howIDroveIt: [],
-                myContribution: [],
+                visual: {
+                  type: "image",
+                  src: "/assets/zoom-pricing-3.jpg",
+                  alt: "新旧文案对比"
+                },
                 visualPlaceholderText: "视觉：对比新旧文案的卡片。"
               },
               {
@@ -430,83 +434,196 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 title: "提前暴露不同计划的价格区间",
                 metaPills: [],
                 subtitle: "",
-                whatINoticed: [],
-                whatIDecided: [
-                  "对有多档计划的产品，在 Learn more 弹窗中用说明每档的主要差异点与价格区间。",
+                bullets: [
+                  "对有多档计划的产品，在 Learn more 弹窗中说明每档的主要差异点与价格区间。",
                   "让用户在进入购买流程前，就对「我需要哪档功能，大概花多少钱」有心理预期，减少中途反悔。"
                 ],
-                howIDroveIt: [],
-                myContribution: [],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-pricing-4.mp4"
+                },
                 visualPlaceholderText: "视觉：不同计划的价格区间展示。"
               }
-            ]
+            ],
+            resultMetrics: [
+              {
+                label: "核心附加产品转化率",
+                value: "5% → 15%",
+                description: "最畅销的附加产品转化率由 5% 提升到 15%。"
+              },
+              {
+                label: "与附加产品交互的用户转化率",
+                value: "11% ↑",
+                description: "打开了弹窗的用户有更高概率被转化。"
+              }
+            ],
+            contributions: {
+              title: "我的贡献",
+              items: [
+                "通过数据和用户访谈，定位附加产品的关键问题与机会点。",
+                "协调各产品线设计师，对现有界面进行盘点，整理出完整的 Figma。",
+                "梳理并交付 12 个弹窗的完整设计。",
+                "建立统一的附加产品弹窗规范，并将其推广应用到价格页、购买流程和订阅中心。"
+              ]
+            }
           },
           {
             intro: {
               phaseNumber: 2,
               phaseLabel: "购买流程",
               title: "购买流程：从「又长又乱」到「清晰流畅」",
+              challengeTitle: "核心挑战：流程字段多，历史包袱重",
               problems: [
                 {
-                  title: "Problem Overview",
+                  title: "用户痛点：表单看不到尽头",
                   content: [
-                     "不同类型用户提前分流，减少大多数用户需要填写的字段数量。",
-                     "尽管实际字段总量与之前接近，但感知负担明显降低。"
+                    "原有购买流程被拆成 5 步，每一步都要填写大量字段。",
+                    "从漏斗数据看，每一层都有明显流失，整体转化率低。",
+                    "用户访谈高频反馈：「看到这么多要填的，就有点想关掉。」"
+                  ]
+                },
+                {
+                  title: "推进复杂：几十个产品，跨国家法规，谁都不敢动",
+                  content: [
+                    "牵涉几十个产品、上百种配置。",
+                    "不同国家地区有各自的法务、合规规则。",
+                    "工程评估改动整条流程的工程量要按年计算。"
                   ]
                 }
               ],
-              beforeLabel: "之前：多步骤结账",
-              beforePlaceholderText: "长而复杂的表单，缺乏清晰的指引。"
+              userQuote: "在用户端，冗长的表单严重拉低购买意愿；但在内部，购买链路牵涉历史问题众多，推动改变极其困难。",
+              conclusionLabel: "结论",
+              beforeLabel: "之前：5 步购买流程",
+              beforePlaceholderText: "在用户端，冗长的表单严重拉低购买意愿；但在内部，购买链路牵涉历史问题众多，推动改变极其困难。",
+            },
+            strategy: {
+              title: "设计策略",
+              subtitle: "简化决策，渐进重构",
+              userInsight: {
+                content: "从漏斗数据和访谈确认问题集中在流程过长与信息堆叠，于是我们选择压缩步骤，小步实验的方式用结果换取后续重构空间。再通过卡片化产品配置与渐进式表单拆解海量字段，让用户一次只处理一小块信息。最后针对移动端重排信息层级与操作路径，把同一套模式迁移到小屏上，让桌面和手机都能以同样清晰、轻量的方式完成购买。"
+              },
+              strategies: [
+                {
+                  title: "小步验证",
+                  content: "先选取范围最小、效果最大的模块进行测试，用成果推动团队做更大调整。"
+                },
+                {
+                  title: "渐进式表单与卡片化",
+                  content: "使用卡片化的产品配置 + 渐进式表单，让信息以小块方式呈现，避免“表单看不到尽头”的挫败感。"
+                },
+                {
+                  title: "移动端适配",
+                  content: "桌面端测试成功后，将同样的模式迁移到移动端，让不同平台有相同的体验。"
+                }
+              ]
             },
             moves: [
               {
                 id: "checkout-move-1",
-                eyebrow: "举措 1 · 复购用户优化",
-                title: "一键完成购买",
-                metaPills: ["流程优化", "效率提升"],
-                subtitle: "对复购用户来说，账号 / 账单信息都已存在，再走多步流程非常浪费。",
-                whatINoticed: [
-                  "复购用户需要重复填写大量已知信息。"
+                eyebrow: "举措 1 · MVP 实验",
+                title: "从 5 步 → 2 步的最小验证",
+                metaPills: ["跨团队对齐", "增量式验证"],
+                subtitle: "先证明“砍字段、减步骤”真的可行，再争取资源。",
+                bullets: [
+                  "与 PM、法务、工程逐条对齐：哪些字段是强制填写、哪些是历史遗留、哪些可以完成购买后补充。",
+                  "基于对齐结果，做一版仅保留核心字段的 MVP，流程压缩到两步：1. 产品配置 2. 账户与支付信息。",
+                  "结果：转化率提升十几个百分点；更重要的是，为后续更彻底的重构提供了团队信心。"
                 ],
-                whatIDecided: [
-                  "为此，我们设计了一步到位的路径。",
-                  "在同一页面展示：已配置产品（卡片）、已保存账单与支付信息。",
-                  "用户只需确认 & 微调，便可完成支付。"
+                visualPlaceholderText: "视觉：从 5 步缩减到 2 步的对比方案。"
+              },
+              {
+                id: "checkout-move-2",
+                eyebrow: "举措 2 · 重构核心路径",
+                title: "卡片化产品 + 渐进式表单",
+                metaPills: ["信息架构", "模式沉淀"],
+                subtitle: "把 MVP 证明过的方向，升级为可复用的设计系统。",
+                bullets: [
+                  "MVP 虽然提升了转化，但仍是“老框架里删字段”，缺少可复用的设计语言。",
+                  "将每个产品配置封装为可折叠/展开的卡片，未来新增产品时，只需新增一张卡片，不必推翻页面结构。",
+                  "任何时刻只展示当前需要填写的部分，不同类型用户提前分流。"
                 ],
-                howIDroveIt: [
-                  "核心流程转化率提高 35%。",
-                  "移动端完成率从 5% 提升至 30%。"
+                visualPlaceholderText: "视觉：卡片化产品配置 + 渐进式表单示意。"
+              },
+              {
+                id: "checkout-move-3",
+                eyebrow: "举措 3 · 移动端适配",
+                title: "与桌面端统一体验",
+                metaPills: ["移动端体验"],
+                bullets: [
+                  "针对小屏幕设计可折叠的订单信息，只外露需要支付的金额。",
+                  "为不同输入框配置针对性的键盘，用户填写表单更丝滑。"
                 ],
-                myContribution: [
-                  "设计了复购用户的极简购买路径。",
-                  "定义了“一键购买”的交互逻辑。"
-                ],
-                visualPlaceholderText: "视觉：复购用户的单页结账界面。"
+                visualPlaceholderText: "视觉：移动端结账界面适配示意。"
               }
-            ]
+            ],
+            resultMetrics: [
+              {
+                label: "购买流程转化率",
+                value: "35% ↑",
+                description: "核心链路的重构实验中，整体转化率提升约 35%。"
+              },
+              {
+                label: "移动端转化率",
+                value: "5% → 30%",
+                description: "移动端转化显著提升，贡献了接近 15% 的营收。"
+              }
+            ],
+            contributions: {
+              title: "我的贡献",
+              items: [
+                "与 PM、工程、法务拆解必填与可后置信息，为用户争取更好的体验。",
+                "从 0 到 1 构建完整的购买流程，交付桌面端和移动端设计。",
+                "搭建卡片化 / 渐进式表单的组件体系，沉淀为后续复用的样板。"
+              ]
+            }
           },
           {
             intro: {
               phaseNumber: 3,
               phaseLabel: "订阅管理",
               title: "订阅管理：把「看不懂、不敢改」变成「看得清、敢操作」",
+              challengeTitle: "核心挑战：入口找不到，状态看不懂，权限逻辑不透明",
               problems: [
-                 {
-                   title: "Navigation & Discovery",
-                   content: [
-                     "管理员后台中，各产品线设计师各自添加 Tab，订阅与计费管理入口深埋在二 / 三级菜单中，多数用户不知道去哪管理自己的订阅。"
-                   ]
-                 },
-                 {
-                   title: "Clarity & Control",
-                   content: [
-                     "进入页面后字段、历史记录、状态标签混在一起。",
-                     "权限与合约逻辑复杂，有些用户前台不可编辑，但界面并没有解释，造成大量客诉和客服成本。"
-                   ]
-                 }
+                {
+                  title: "入口缺失",
+                  content: [
+                    "管理员后台中，各产品线设计师各自添加 Tab，订阅与计费入口深埋在二 / 三层菜单里。",
+                    "绝大多数用户不知道去哪儿管理自己的订阅。"
+                  ]
+                },
+                {
+                  title: "信息杂乱 + 权限不明",
+                  content: [
+                    "进入页面后字段、历史记录、状态标签混在一起，列表与详情混为一体。",
+                    "权限与合约逻辑复杂，有些用户在前台不可编辑，但界面并没有解释，造成大量客诉与客服成本。"
+                  ]
+                }
               ],
+              userQuote: "用户很难从现有设计中获取有效信息，即便获取到了，也不知道能进行说明操作。",
+              conclusionLabel: "结论",
               beforeLabel: "之前：管理面板",
-              beforePlaceholderText: "入口深埋，信息混杂，缺乏权限解释。"
+              beforePlaceholderText: "入口深埋、信息堆叠、权限不明，用户既看不懂也不敢改。"
+            },
+            strategy: {
+              title: "设计策略",
+              subtitle: "入口前移 + 信息分层 + 权限表达清晰",
+              userInsight: {
+                content: "管理订阅时，用户只想知道：我在哪、我拥有什么、下一步能做什么。"
+              },
+              strategies: [
+                {
+                  title: "入口前移",
+                  content: "把订阅管理入口放在导航与头像菜单的第一层，确保用户第一时间找到。"
+                },
+                {
+                  title: "信息分层展示",
+                  content: "列表层看「现在」——产品、周期、下一次扣费。详情层看「所有」——配置、账单、历史记录。"
+                },
+                {
+                  title: "权限表达清晰",
+                  content: "明确哪些用户可以在线修改，哪些需要人工支持，用 UI 提示告知下一步。"
+                }
+              ]
             },
             moves: [
               {
@@ -514,20 +631,12 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 eyebrow: "举措 1 · 订阅入口前移",
                 title: "修改信息结构，头像一键触达",
                 metaPills: ["信息架构", "可发现性"],
-                subtitle: "将订阅管理入口从深层次的菜单中前移，确保用户能够在第一时间找到并访问管理界面。",
-                whatINoticed: [
-                  "用户难以找到管理入口。"
-                ],
-                whatIDecided: [
-                  "在管理后台加入单独的一级「订阅 / 计费管理」入口。",
-                  "在 Zoom 客户端和 Web 端的头像下拉中增加「订阅中心」入口。"
-                ],
-                howIDroveIt: [
-                  "我用 Figma 做了交互原型，对 6–7 位用户做可用性测试：所有人都能在短时间内找到订阅中心，任务成功率 100%。"
-                ],
-                myContribution: [
-                  "重新规划了导航结构。",
-                  "设计了头像下拉菜单的入口。"
+                subtitle: "确保“我要改订阅”这件事，在任何入口都能一键到达。",
+                bullets: [
+                  "用户在客服单里频繁询问“订阅在哪”，而管理后台导航随着产品线扩张被不断塞满。",
+                  "在管理员后台加入一级「订阅 / 计费管理」入口。",
+                  "在 Zoom 客户端与 Web 端的头像下拉里新增「订阅中心」入口。",
+                  "通过 Figma 原型快速对 7 名用户做可用性测试，任务成功率 100%。"
                 ],
                 visualPlaceholderText: "视觉：新的导航菜单和头像下拉入口。"
               },
@@ -536,48 +645,47 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 eyebrow: "举措 2 · 关键信息外露",
                 title: "列表看「现在」，详情看「所有」",
                 metaPills: ["信息分层", "清晰度"],
-                subtitle: "列表层展示当前最关键信息，帮助用户快速查看产品状态与到期时间；详情层则提供更为详细的历史账单与配置。",
-                whatINoticed: [
-                  "关键信息被淹没在次要细节中。"
-                ],
-                whatIDecided: [
-                  "列表层只展示决策当下真正需要的信息：产品名称、当前计划 / 计费周期、下一次扣费 / 到期时间、状态标签（试用中 / 即将到期 / 欠费等）。",
-                  "详情层按信息类型分区：配置详情、历史账单与发票、多产品组合时的详细计费结构。"
-                ],
-                howIDroveIt: [
-                  "展示方式与购买卡片保持一致，让用户在价格页 / 购买流程 / 订阅中心看到的是同一种设计语言。"
-                ],
-                myContribution: [
-                  "定义了列表和详情的信息层级。",
-                  "设计了状态标签的视觉规范。"
+                subtitle: "折叠多余信息，仅展示当前状态",
+                bullets: [
+                  "列表层只展示决策当下真正需要的信息：产品名称、当前计划 / 计费周期、下一次扣费 / 到期时间、状态标签。",
+                  "定义列表/详情的层级规则与状态标签系统，让新产品添加更规范。"
                 ],
                 visualPlaceholderText: "视觉：新的订阅列表和详情页设计。"
               },
               {
                 id: "sub-move-3",
-                eyebrow: "举措 3 · 渐进式上线 & 规范沉淀",
-                title: "分阶段推进与标准化",
-                metaPills: ["发布策略", "设计规范"],
-                subtitle: "订阅系统覆盖的 plan 和配置极其庞大，不可能一刀切。",
-                whatINoticed: [
-                  "系统复杂性高，风险大。"
+                eyebrow: "举措 3 · 权限一目了然",
+                title: "梳理「谁能在线改、谁必须走人工」",
+                metaPills: ["权限表达", "客服分流"],
+                subtitle: "和 PM、研发定义清晰的权限规则，让用户知道下一步怎么做。",
+                bullets: [
+                  "我和 PM、研发一起，梳理出一套清晰的规则：哪些用户可以在线升级，哪些用户必须通过销售或客服修改。",
+                  "对可以在线操作的场景提供明确的操作入口。",
+                  "对不能在线操作的场景告知原因，给出下一步建议。"
                 ],
-                whatIDecided: [
-                  "阶段 1：优先上线新入口，提升订阅中心访问量，为后续改版积累样本。",
-                  "阶段 2：从产品组合相对简单的个人用户开始改版新订阅中心，通过行为数据和访谈验证信息架构有效性。",
-                  "阶段 3：按事先定义的规则和信息结构分批接入更多 plan & 企业用户。"
-                ],
-                howIDroveIt: [
-                  "我主导整理了一套订阅卡片 & 详情展示规范：列表层必含字段、详情层的分区与顺序、状态标签的表现形式。",
-                  "同时复用价格页附加产品弹窗模式，让用户在订阅中心遇到附加产品时，也能通过同样的弹窗理解产品。"
-                ],
-                myContribution: [
-                  "制定了分阶段上线计划。",
-                  "建立了跨团队的订阅设计规范。"
-                ],
-                visualPlaceholderText: "视觉：设计规范文档截图。"
+                visualPlaceholderText: "视觉：权限提示与分流示意。"
               }
-            ]
+            ],
+            resultMetrics: [
+              {
+                label: "订阅中心入口可用性测试",
+                value: "100%",
+                description: "所有 7 名用户都成功找到了入口。"
+              },
+              {
+                label: "非自愿流失率",
+                value: "7.2% → 5.8%",
+                description: "因支付失败导致的流失显著下降。"
+              }
+            ],
+            contributions: {
+              title: "我的贡献",
+              items: [
+                "重构管理员后台导航与客户端头像入口，统一订阅管理入口。",
+                "设计列表 / 详情分层与权限提示模式，让用户敢于在线修改。",
+                "主导订阅卡片与详情展示规范，配合渐进式上线策略落地。"
+              ]
+            }
           }
         ],
         patterns: {

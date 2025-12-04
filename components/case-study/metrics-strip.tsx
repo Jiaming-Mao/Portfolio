@@ -2,10 +2,12 @@ import { MetricsData } from '@/lib/case-study-types';
 
 export function MetricsStrip({ data }: { data: MetricsData }) {
   return (
-    <section className="mb-24">
-      <h3 className="text-sm font-medium text-white/50 uppercase tracking-wider mb-8">
-        {data.title}
-      </h3>
+    <div className="space-y-8">
+      {data.title && (
+        <h3 className="text-sm font-medium text-white/50 uppercase tracking-wider mb-8">
+          {data.title}
+        </h3>
+      )}
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {data.metrics.map((metric, index) => (
@@ -21,7 +23,7 @@ export function MetricsStrip({ data }: { data: MetricsData }) {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 

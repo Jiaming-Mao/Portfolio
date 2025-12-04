@@ -2,7 +2,7 @@ import { PatternLibraryData, ReflectionData } from '@/lib/case-study-types';
 
 export function PatternLibrarySection({ data }: { data: PatternLibraryData }) {
   return (
-    <section id="patterns" className="mb-40 pt-20 border-t border-white/5 scroll-mt-32">
+    <section id="patterns" className="mb-40 pb-20 border-b border-white/5 scroll-mt-32">
       <h2 className="text-2xl font-bold text-white mb-6">{data.title}</h2>
       {data.intro && <p className="text-lg text-white/60 mb-12 max-w-2xl">{data.intro}</p>}
       
@@ -25,7 +25,7 @@ export function PatternLibrarySection({ data }: { data: PatternLibraryData }) {
 
 export function ReflectionSection({ data }: { data: ReflectionData }) {
   return (
-    <section id="reflection" className="mb-32 pt-20 border-t border-white/5 scroll-mt-32">
+    <section id="reflection" className="mb-32 pb-20 border-b border-white/5 scroll-mt-32">
       <h2 className="text-2xl font-bold text-white mb-12">{data.title}</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

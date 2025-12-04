@@ -42,9 +42,7 @@ export default function ProjectPage() {
         <div className="md:col-span-5 pt-24 pb-32">
           {isCaseStudyTemplate && caseStudyData ? (
              <div className="flex flex-col gap-12">
-                <div data-nav-theme="light">
-                   <HeroSection data={caseStudyData.hero} />
-                </div>
+                <HeroSection data={caseStudyData.hero} />
                 <MetricsStrip data={caseStudyData.metrics} />
                 <LifecycleOverviewSection data={caseStudyData.lifecycle} />
                 

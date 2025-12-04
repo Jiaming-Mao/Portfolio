@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export function HeroSection({ data }: { data: HeroData }) {
   return (
-    <section className="mb-24">
+    <div className="space-y-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-6 space-y-8">
           <motion.div
@@ -20,17 +20,6 @@ export function HeroSection({ data }: { data: HeroData }) {
             <p className="text-xl text-white/70 leading-relaxed mb-8">
               {data.description}
             </p>
-
-            <div className="flex flex-wrap gap-2 mb-8">
-              {data.tags.map((tag) => (
-                <span 
-                  key={tag} 
-                  className="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-white/10">
               {data.meta.map((item) => (
@@ -67,7 +56,7 @@ export function HeroSection({ data }: { data: HeroData }) {
           </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
