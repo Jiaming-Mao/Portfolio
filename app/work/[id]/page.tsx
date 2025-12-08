@@ -30,9 +30,36 @@ export default function ProjectPage() {
     return <div className="min-h-screen flex items-center justify-center text-white/50">Project not found</div>;
   }
 
+  // Handle coming soon projects
+  if (project.comingSoon) {
+    return (
+      <main className="min-h-screen relative selection:bg-white/20 px-6 md:px-12 max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-16">
+          {/* Left Column - Sticky Info */}
+          <div className="md:col-span-1">
+            <ProjectInfo project={project} />
+          </div>
+
+          {/* Right Column - Coming Soon Message */}
+          <div className="md:col-span-5 pt-24 pb-32 flex items-center justify-center">
+            <div className="text-center space-y-6 max-w-md">
+              <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-medium mb-4">
+                {t.nav.comingSoon}
+              </div>
+              <h1 className="text-4xl font-medium text-white">{project.title}</h1>
+              <p className="text-lg text-white/60">{project.description}</p>
+            </div>
+          </div>
+        </div>
+        
+        <Navbar />
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen relative selection:bg-white/20 px-6 md:px-12 max-w-[1600px] mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-16">
         {/* Left Column - Sticky Info & TOC */}
         <div className="md:col-span-1">
           <ProjectInfo project={project} />

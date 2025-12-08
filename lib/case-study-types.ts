@@ -167,4 +167,5 @@ export interface CaseStudyData {
 
 export interface UnifiedProject extends Project {
   details?: CaseStudyData;
+  comingSoon?: boolean;
 }

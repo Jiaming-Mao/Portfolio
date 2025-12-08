@@ -1,4 +1,7 @@
+'use client';
+
 import { Move, PhaseData, PhaseIntro, StrategyData, OutcomeBlock, MetricResult } from '@/lib/case-study-types';
+import { useLanguage } from '@/lib/i18n';
 import Image from 'next/image';
 
 function PhaseHeader({ intro }: { intro: PhaseIntro }) {
@@ -31,11 +34,14 @@ function PlaceholderBox({ text, label }: { text: string; label?: string }) {
 }
 
 function PhaseIntroBlock({ intro }: { intro: PhaseIntro }) {
+  const { locale } = useLanguage();
+  const challengeLabel = locale === 'zh' ? '核心挑战' : 'Core Challenge';
+  
   return (
     <div className="mb-32">
       <div className="max-w-3xl mb-12">
         <span className="text-sm font-medium text-white/40 uppercase tracking-wider mb-3 block">
-          核心挑战
+          {challengeLabel}
         </span>
         <h3 className="text-2xl font-bold text-white mb-4">{intro.challengeTitle || intro.title}</h3>
       </div>
@@ -193,8 +199,9 @@ function MoveVisual({ move }: { move: Move }) {
   }
 
   if (move.visual.type === 'video') {
+    const isCheckout3 = move.visual.src?.includes('zoom-checkout-3.mp4');
     return (
-      <div className="rounded-2xl overflow-hidden border border-white/10 bg-black/60">
+      <div className={`rounded-2xl overflow-hidden border border-white/10 bg-black/60 ${isCheckout3 ? 'flex justify-center' : ''}`}>
         <video
           src={move.visual.src}
           poster={move.visual.poster}
@@ -202,7 +209,7 @@ function MoveVisual({ move }: { move: Move }) {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className={isCheckout3 ? "w-1/2 h-full object-cover" : "w-full h-full object-cover"}
         />
       </div>
     );
@@ -268,6 +275,9 @@ function MoveSection({ move }: { move: Move }) {
 }
 
 export function PhaseSection({ data }: { data: PhaseData }) {
+  const { locale } = useLanguage();
+  const resultsLabel = locale === 'zh' ? '结果与贡献' : 'Results & Contributions';
+  
   return (
     <section id={`phase-${data.intro.phaseNumber}`} className="mb-40 pb-20 border-b border-white/5 scroll-mt-32">
       <PhaseHeader intro={data.intro} />
@@ -284,7 +294,7 @@ export function PhaseSection({ data }: { data: PhaseData }) {
       {(data.resultMetrics || data.contributions) && (
         <div className="mt-24">
           <span className="text-sm font-medium text-white/40 uppercase tracking-wider mb-3 block">
-            结果与贡献
+            {resultsLabel}
           </span>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
             {data.resultMetrics && (

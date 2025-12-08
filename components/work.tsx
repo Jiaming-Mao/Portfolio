@@ -16,6 +16,12 @@ export function Work() {
         {t.work.projects.map((project, index) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const videoRef = useRef<HTMLVideoElement>(null);
+          const isComingSoon = project.comingSoon;
+
+          const ProjectWrapper = isComingSoon ? 'div' : Link;
+          const wrapperProps = isComingSoon 
+            ? { className: 'block cursor-default' }
+            : { href: `/work/${project.slug}`, className: 'block cursor-pointer' };
 
           return (
           <motion.div 
@@ -24,9 +30,9 @@ export function Work() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            className="group w-full"
+            className={`group w-full ${isComingSoon ? 'opacity-75' : ''}`}
             onMouseEnter={() => {
-              if (videoRef.current) {
+              if (!isComingSoon && videoRef.current) {
                 const playPromise = videoRef.current.play();
                 if (playPromise !== undefined) {
                   playPromise.catch((error) => {
@@ -38,15 +44,15 @@ export function Work() {
               }
             }}
             onMouseLeave={() => {
-              if (videoRef.current) {
+              if (!isComingSoon && videoRef.current) {
                 videoRef.current.pause();
                 videoRef.current.currentTime = 0;
               }
             }}
           >
-            <Link href={`/work/${project.slug}`} className="block cursor-pointer">
+            <ProjectWrapper {...wrapperProps}>
               <div 
-                className="relative aspect-[16/10] bg-white/5 rounded-lg overflow-hidden mb-6 border border-white/10 transition-all duration-500 group-hover:border-white/20"
+                className={`relative aspect-[16/10] bg-white/5 rounded-lg overflow-hidden mb-6 border border-white/10 transition-all duration-500 ${isComingSoon ? '' : 'group-hover:border-white/20'}`}
                 data-nav-theme={project.slug === 'subscription-redesign-zoom' ? 'light' : undefined}
               >
                  {project.image ? (
@@ -55,9 +61,9 @@ export function Work() {
                         src={project.image} 
                         alt={project.title} 
                         fill 
-                        className="object-cover transition-opacity duration-500 group-hover:opacity-0"
+                        className={`object-cover transition-opacity duration-500 ${isComingSoon ? '' : 'group-hover:opacity-0'}`}
                      />
-                     {project.video && (
+                     {!isComingSoon && project.video && (
                        <video
                          ref={videoRef}
                          src={project.video}
@@ -66,6 +72,13 @@ export function Work() {
                          playsInline
                          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                        />
+                     )}
+                     {isComingSoon && (
+                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                         <span className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-medium">
+                           {t.nav.comingSoon}
+                         </span>
+                       </div>
                      )}
                    </>
                  ) : (
@@ -79,10 +92,10 @@ export function Work() {
               </div>
               
               <div className="flex flex-col gap-2">
-                <h3 className="text-xl font-medium text-white group-hover:text-white/90 transition-colors">{project.title}</h3>
+                <h3 className={`text-xl font-medium text-white ${isComingSoon ? '' : 'group-hover:text-white/90'} transition-colors`}>{project.title}</h3>
                 <p className="text-base text-white/60 max-w-xl">{project.description}</p>
               </div>
-            </Link>
+            </ProjectWrapper>
           </motion.div>
         )})} 
       </div>

@@ -17,6 +17,7 @@ export const dictionary = {
       prev: 'Prev',
       next: 'Next',
       overview: 'Overview',
+      comingSoon: 'Coming Soon',
     },
     hero: {
       title: "I'm a UX designer building systems.",
@@ -28,47 +29,60 @@ export const dictionary = {
         zoomProjectData.en,
         {
           id: 2,
-          slug: 'beta-platform',
-          title: 'Beta Platform',
-          description: 'Redesigning the dashboard for better user engagement.',
-          image: '/window.svg', // Placeholder
-          client: 'SaaS Inc.',
-          role: 'UX Researcher',
-          year: '2023',
-          sections: [
-             { id: 'overview', title: 'Overview', content: 'Beta Platform needed a dashboard overhaul to help users visualize their data more effectively.' },
-             { id: 'challenge', title: 'The Challenge', content: 'The legacy dashboard was cluttered and slow, leading to low daily active usage.' },
-             { id: 'process', title: 'Process', content: 'We used card sorting and tree testing to restructure the information architecture.' },
-             { id: 'outcome', title: 'Outcome', content: 'Daily active users increased by 15% within the first month of launch.' },
-          ]
-        },
-        {
-          id: 3,
-          slug: 'gamma-design',
-          title: 'Gamma Design System',
-          description: 'Creating a unified design language for enterprise software.',
-          image: '/window.svg', // Placeholder
-          client: 'Enterprise Corp',
-          role: 'UI Designer',
-          year: '2023',
-          sections: [
-             { id: 'overview', title: 'Overview', content: 'Gamma is a multi-platform design system created to unify the product suite of Enterprise Corp.' },
-             { id: 'challenge', title: 'The Challenge', content: 'Inconsistent UI components were increasing technical debt and slowing down development.' },
-             { id: 'process', title: 'Process', content: 'We audited over 500 screens and consolidated 50+ disparate components into a atomic system.' },
-             { id: 'outcome', title: 'Outcome', content: 'Development speed increased by 30% and design consistency score reached 98%.' },
-          ]
+          slug: 'lark-base-app-mode',
+          title: 'Lark Base App Mode',
+          description: 'App building for everyone',
+          image: '/assets/app-mode-hero.jpeg',
+          client: 'Lark',
+          role: 'Product Designer',
+          year: '2024',
+          sections: [],
+          comingSoon: true,
         },
       ] as UnifiedProject[],
     },
     about: {
-      title: 'About Me',
-      description: 'I am a passionate UX designer with a focus on simplicity and functionality. I believe in design that serves the user first. My approach combines research-driven insights with clean, modern aesthetics to solve complex problems.',
+      title: 'About How I Made This Portfolio',
+      intro: 'How I reduced my portfolio-making time from months to a week with AI',
+      description: 'Portfolio creation has always been a pain point for me, as it is for many designers. From structuring the narrative to building the site or PDF, everything takes a long time to prepare. With this portfolio, however, I saw an opportunity to explore ways to expedite the process using AI. Here\'s what I did:',
+      steps: [
+        {
+          number: 1,
+          text: 'I spoke into a meeting app that transcribed my entire speech, where I detailed every challenge I faced while designing the project. By pasting the transcription into ChatGPT, it generated a structured document for me.',
+        },
+        {
+          number: 2,
+          text: 'I then pasted it into an online doc. With Atlas, I was able to edit the project documentation alongside AI.',
+        },
+        {
+          number: 3,
+          text: 'With a complete document, I continued asking ChatGPT to critique the doc until it met its standards.',
+        },
+        {
+          number: 4,
+          text: 'Using Cursor, I quickly built the website structure and continued modifying it.',
+        },
+        {
+          number: 5,
+          text: 'With ChatGPT and Gemini, I generated an HTML version of the page structure before actually implementing it with Cursor.',
+        },
+      ],
+      challenges: {
+        title: 'What I haven\'t figured out how to expedite with AI:',
+        items: [
+          'Being able to quickly edit parts of the website without using an Agent.',
+          'Producing image/video assets with clean, consistent labeling.',
+        ],
+      },
     },
     contact: {
       title: 'Get in Touch',
       email: 'Email me',
+      emailAddress: 'maojiaming1998@163.com',
+      wechat: 'WeChat',
+      wechatId: 'maojiaming1998',
       linkedin: 'LinkedIn',
-      action: 'Say Hello',
+      linkedinUrl: 'https://www.linkedin.com/in/jiaming-martin-m-499b03111',
     },
   },
   zh: {
@@ -80,6 +94,7 @@ export const dictionary = {
       prev: '上一个',
       next: '下一个',
       overview: '概览',
+      comingSoon: '即将推出',
     },
     hero: {
       title: '构建系统的 UX 设计师',
@@ -91,47 +106,60 @@ export const dictionary = {
         zoomProjectData.zh,
         {
           id: 2,
-          slug: 'beta-platform',
-          title: 'Beta 平台',
-          description: '重新设计仪表板以提高用户参与度。',
-          image: '/window.svg',
-          client: 'SaaS Inc.',
-          role: 'UX 研究员',
-          year: '2023',
-          sections: [
-             { id: 'overview', title: '概览', content: 'Beta 平台需要对其仪表板进行彻底改革，以帮助用户更有效地可视化数据。' },
-             { id: 'challenge', title: '挑战', content: '旧版仪表板杂乱且缓慢，导致日活跃使用率较低。' },
-             { id: 'process', title: '过程', content: '我们使用卡片分类和树测试来重构信息架构。' },
-             { id: 'outcome', title: '结果', content: '发布后的第一个月内，日活跃用户增加了 15%。' },
-          ]
-        },
-        {
-          id: 3,
-          slug: 'gamma-design',
-          title: 'Gamma 设计系统',
-          description: '为企业软件创建统一的设计语言。',
-          image: '/window.svg',
-          client: 'Enterprise Corp',
-          role: 'UI 设计师',
-          year: '2023',
-          sections: [
-             { id: 'overview', title: '概览', content: 'Gamma 是一个多平台设计系统，旨在统一 Enterprise Corp 的产品套件。' },
-             { id: 'challenge', title: '挑战', content: '不一致的 UI 组件增加了技术债务并减缓了开发速度。' },
-             { id: 'process', title: '过程', content: '我们审核了 500 多个屏幕，将 50 多个不同的组件整合到一个原子系统中。' },
-             { id: 'outcome', title: '结果', content: '开发速度提高了 30%，设计一致性得分达到 98%。' },
-          ]
+          slug: 'lark-base-app-mode',
+          title: '飞书多维表格应用模式',
+          description: '让人人都能轻松搭建业务系统',
+          image: '/assets/app-mode-hero.jpeg',
+          client: '飞书',
+          role: '产品设计师',
+          year: '2024',
+          sections: [],
+          comingSoon: true,
         },
       ] as UnifiedProject[],
     },
     about: {
-      title: '关于我',
-      description: '我是一名充满激情的 UX 设计师，专注于简洁和功能性。我相信设计首先应服务于用户。我的方法结合了研究驱动的洞察力和现代美学，以解决复杂的问题。',
+      title: '关于我是如何制作这个作品集的',
+      intro: '如何用 AI 将作品集制作时间从数月缩短到一周',
+      description: '制作作品集对我来说一直是个痛点，对许多设计师来说也是如此。从构建叙事结构到搭建网站或 PDF，每个环节都需要花费大量时间准备。然而，通过这个作品集，我看到了一个机会，探索如何用 AI 来加速这个过程。以下是我的做法：',
+      steps: [
+        {
+          number: 1,
+          text: '我使用会议应用进行语音输入，完整转录了我的讲述，详细描述了设计项目时遇到的每一个挑战。将转录内容粘贴到 ChatGPT 后，它为我生成了一份结构化的文档。',
+        },
+        {
+          number: 2,
+          text: '然后我将文档粘贴到在线文档中。使用 Atlas，我能够与 AI 一起编辑项目文档。',
+        },
+        {
+          number: 3,
+          text: '有了完整的文档后，我继续让 ChatGPT 对文档进行批判性审查，直到达到其标准。',
+        },
+        {
+          number: 4,
+          text: '使用 Cursor，我快速搭建了网站结构并持续进行修改。',
+        },
+        {
+          number: 5,
+          text: '使用 ChatGPT 和 Gemini，我在用 Cursor 实际实现之前，先生成了页面结构的 HTML 版本。',
+        },
+      ],
+      challenges: {
+        title: '我尚未找到如何用 AI 加速的部分：',
+        items: [
+          '能够在不使用 Agent 的情况下快速编辑网站的各个部分。',
+          '生成具有清晰、一致标签的图像/视频素材。',
+        ],
+      },
     },
     contact: {
       title: '联系我',
       email: '发邮件',
+      emailAddress: 'maojiaming1998@163.com',
+      wechat: '微信',
+      wechatId: 'maojiaming1998',
       linkedin: '领英',
-      action: '打个招呼',
+      linkedinUrl: 'https://www.linkedin.com/in/jiaming-martin-m-499b03111',
     },
   },
 };

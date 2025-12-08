@@ -15,47 +15,46 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
     details: {
         hero: {
           eyebrow: "Case Study · B2B SaaS · Subscription Lifecycle",
-          title: "Zoom Subscription Redesign",
-          description: "Streamlining the end-to-end subscription experience for online customers, reducing churn and increasing upsell conversion.",
-          tags: ["UX Design", "Product Strategy", "Design Systems"],
+          title: "Zoom Subscription Lifecycle Experience Optimization",
+          description: "During the pandemic, Zoom gained many individual users and small-to-medium business customers, but the overall business model long relied on sales teams, with self-service subscription systems relatively lagging. It was precisely these new small-to-medium business users who preferred to complete purchases and upgrades online independently, making the outdated online purchase flow gradually become a growth bottleneck: low conversion rates and high involuntary churn.",
+          tags: ["UX Design", "Product Strategy", "Growth Design"],
           meta: [
-            { label: "Role", value: "Lead Product Designer" },
-            { label: "Timeline", value: "6 Months" },
-            { label: "Team", value: "2 PMs, 4 Engineers" }
+            { label: "Role", value: "Product Designer" },
+            { label: "Timeline", value: "2023" },
+            { label: "Tools", value: "Figma • Contentsquare • UserTesting" }
           ],
           heroVisualPlaceholder: "Hero Visual: Dashboard Screenshot or Abstract Representation",
           heroVideo: "/assets/zoom-hero.mp4",
         },
         metrics: {
-          title: "Key Impact",
+          title: "",
           metrics: [
             {
-              label: "Add-on Conversion",
+              label: "Core Add-on Conversion Rate",
               value: "5% → 15%",
-              description: "Increase in users adding premium features during checkout."
+              description: "Significant increase in user conversion rate for add-on purchases."
             },
             {
-              label: "Churn Rate",
-              value: "-12%",
-              description: "Reduction in cancellations due to improved plan clarity."
+              label: "Checkout Conversion Rate",
+              value: "35% ↑",
+              description: "After core flow refactoring, purchase completion rate significantly improved."
             },
             {
-              label: "Support Tickets",
-              value: "-25%",
-              description: "Decrease in billing-related inquiries.",
-              note: "Measured over 3 months post-launch"
+              label: "Involuntary Churn Rate",
+              value: "17% ↓",
+              description: "Through billing center optimization, reduced accidental cancellations.",
             }
           ]
         },
         context: {
-          title: "Context & Constraints",
+          title: "Project Background",
           paragraphs: [
-            "Zoom's rapid growth led to a fragmented subscription management experience. Users struggled to understand their plans, upgrade paths were unclear, and billing was a major pain point.",
-            "The goal was to unify the pricing, checkout, and management flows into a cohesive lifecycle experience that empowered users to self-serve while driving revenue growth.",
-            "We faced significant technical debt in the legacy billing system and tight deadlines aligned with the quarterly release cycle."
+            "During the pandemic, Zoom gained many individual users and small-to-medium business customers, but the overall business model long relied on sales teams, with self-service subscription systems relatively lagging.",
+            "It was precisely these new small-to-medium business users who preferred to complete purchases and upgrades online independently, making the outdated online purchase flow gradually become a growth bottleneck: low conversion rates and high involuntary churn.",
+            "In this context, as the product designer for the subscription lifecycle, I was responsible for systematically optimizing the pricing page, checkout flow, and billing management, hoping to help users understand products and complete purchases without relying on sales; and in subsequent use, confidently manage their subscriptions."
           ],
           summary: {
-            scopeItems: ["Pricing Page", "Checkout Flow", "Subscription Management Dashboard"],
+            scopeItems: ["Pricing Page", "Checkout Flow", "Billing Dashboard"],
             teamItems: ["1 Lead Designer (Me)", "2 Product Managers", "4 Frontend Engineers", "1 UX Researcher"],
             constraintItems: ["Legacy Billing API", "Strict Brand Guidelines", "6-week Dev Cycle"]
           }
@@ -65,23 +64,23 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
           phases: [
             {
               phaseNumber: 1,
-              title: "Pricing · Selection",
-              description: "Help users understand value and pick the right plan.",
-              chips: ["Clarity", "Comparison"],
-              image: "/assets/zoom-overview-checkout.jpg" // Using existing checkout image as placeholder since pricing image is missing
+              title: "Pricing",
+              description: "From 'Just Buying Meetings' to 'Understanding and Purchasing Add-ons'",
+              chips: ["Clarity", "Value Delivery"],
+              image: "/assets/zoom-hero.png"
             },
             {
               phaseNumber: 2,
-              title: "Checkout · Conversion",
-              description: "Streamline the purchase flow and reduce drop-off.",
+              title: "Checkout",
+              description: "From 'Long and Messy' to 'Clear and Smooth'",
               chips: ["Trust", "Efficiency"],
               image: "/assets/zoom-overview-checkout.jpg"
             },
             {
               phaseNumber: 3,
-              title: "Management · Retention",
-              description: "Empower users to manage seats and add-ons easily.",
-              chips: ["Control", "Self-serve"],
+              title: "Billing",
+              description: "From 'Can't Understand, Don't Dare Change' to 'See Clearly, Dare to Operate'",
+              chips: ["Control", "Self-service"],
               image: "/assets/zoom-overview-billing.jpg"
             }
           ]
@@ -91,145 +90,436 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
             intro: {
               phaseNumber: 1,
               phaseLabel: "Pricing",
-              title: "Clarifying Plans & Add-ons",
+              title: "Pricing: From 'Just Buying Meetings' to 'Understanding and Purchasing Add-ons'",
+              challengeTitle: "Users only knew about Zoom Meetings and didn't understand the value of add-ons",
               problems: [
                 {
-                  title: "Confusion & Missed Revenue",
+                  title: "Data Side: Exposure Without Conversion",
                   content: [
-                    "Users were confused by the difference between 'Pro' and 'Business' plans.",
-                    "Add-ons were hidden in sub-menus, leading to missed revenue.",
-                    "Mobile experience was non-existent."
-                  ]
+                    "Through analytics tools like Contentsquare, I discovered:",
+                    "Over 10% of users scrolled to the add-on section, but less than 1% clicked to purchase;",
+                    "Many users tried clicking cards or 'More features' but couldn't get more information.",
+                    "Even after clicking 'Buy Now', many users didn't complete the purchase."
+                  ],
+                  image: "/assets/zoom-pricing-challenge-data.png",
+                  imageAlt: "Low conversion data chart"
+                },
+                {
+                  title: "User Side: Couldn't Understand What Products Do",
+                  content: [
+                    "Collaborated with user research to interview 6 small business owners / individual users, common feedback:",
+                    "Cards provided too little information;",
+                    "Copy was too abstract, seemed to talk about features rather than explaining what problems they solve."
+                  ],
+                  quote: "What does unlimited concurrently editable boards even mean? I mean you have a whiteboard product that people collaborate on. That's the key feature, right?",
+                  image: "/assets/zoom-pricing-challenge-user.jpg",
+                  imageAlt: "User interview photo"
                 }
               ],
-              userQuote: "I just want to know if I need the webinar add-on or if it comes with the plan.",
+              userQuote: "The pricing page mostly listed features without clearly explaining the use cases and business value of add-ons. Users lacked the information needed to make purchasing decisions.",
+              conclusionLabel: "Conclusion",
               beforeLabel: "Before: Legacy Pricing",
-              beforePlaceholderText: "Screenshot of cluttered pricing table with tiny text and confusing feature lists."
+              beforePlaceholderText: "The pricing page mostly listed features without clearly explaining the use cases and business value of add-ons. Users lacked the information needed to make purchasing decisions."
+            },
+            strategy: {
+              title: "Design Strategy",
+              subtitle: "Provide More Information, Deliver Value, Build Trust with Users",
+              userInsight: {
+                content: "In interviews, users repeatedly mentioned that one reason they liked Zoom was: the interface is simple and easy to use, you can understand it at a glance. But this trust in 'ease of use' didn't extend to add-ons. Based on this insight, I developed three strategies:",
+              },
+              strategies: [
+                {
+                  title: "Fill Information Gaps",
+                  content: "Help users understand what problems add-ons solve and what they do"
+                },
+                {
+                  title: "Value-Oriented",
+                  content: "Reduce jargon and intuitively showcase product value"
+                },
+                {
+                  title: "Decision Pre-positioning",
+                  content: "Before entering checkout, users know roughly what plans, price ranges, and differences exist"
+                }
+              ]
             },
             moves: [
               {
                 id: "pricing-move-1",
-                eyebrow: "Move 1 · Card + 'Learn more' modal",
-                title: "Turn add-ons into focused decisions, not footnotes",
-                metaPills: ["IA & Interaction", "Ownership: end-to-end design"],
-                subtitle: "Instead of burying add-ons, I elevated them to first-class citizens in the selection flow.",
+                eyebrow: "Move 1 · Progressive Disclosure",
+                title: "Cards + Learn More Modal",
+                metaPills: ["Information Architecture", "Interaction Design"],
+                subtitle: "Allow users to fully understand products without leaving the pricing page.",
                 bullets: [
-                  "Analytics showed users clicking 'back' repeatedly to compare options, and heatmaps indicated low engagement with the feature comparison table.",
-                  "Introduced a card-based layout for add-ons with clear value props and added a 'Learn more' modal for detailed feature breakdowns without leaving the flow.",
-                  "Prototyped 3 variations, tested with 5 users, and partnered with engineering to ensure the modal was accessible and performant.",
-                  "Designed the card component and modal interaction while writing the microcopy for the add-on descriptions."
+                  "Added prominent 'Learn more' buttons to each add-on card.",
+                  "Clicking opens a modal with additional information.",
+                  "Ensures users can fully understand products without leaving the pricing page."
                 ],
                 visual: {
-                  type: 'video',
-                  src: '/assets/zoom-pricing-1.mp4'
+                  type: "video",
+                  src: "/assets/zoom-pricing-1.mp4"
                 },
-                visualPlaceholderText: "Visual: New Add-on Cards with clear pricing and 'Add' buttons."
+                visualPlaceholderText: "Visual: New card design with Learn More buttons."
+              },
+              {
+                id: "pricing-move-2",
+                eyebrow: "Move 2 · Introduce Real UI Screenshots",
+                title: "Help Users Understand Features at a Glance",
+                metaPills: ["Visual Presentation", "Cross-team Collaboration"],
+                subtitle: "Include key UI screenshots in the Learn more modal so users can immediately see how the product works.",
+                bullets: [
+                  "Included key UI screenshots in the Learn more modal so users can immediately see how the product works.",
+                  "I was responsible for cropping and layout, ensuring all images follow unified visual standards and highlighting rules, with each screenshot illustrating a key use case."
+                ],
+                visual: {
+                  type: "image",
+                  src: "/assets/zoom-pricing-2.jpg",
+                  alt: "Learn more modal UI screenshots"
+                },
+                visualPlaceholderText: "Visual: Product UI screenshots in Learn More modal."
+              },
+              {
+                id: "pricing-move-3",
+                eyebrow: "Move 3 · Copy That Reflects Value",
+                title: "From 'Feature Jargon' to 'Business Benefits'",
+                metaPills: ["UX Copy", "Value Proposition"],
+                subtitle: "Rewrite internal/technical language into user-friendly language.",
+                bullets: [
+                  "Worked with PMs and copywriters to identify each add-on's core value, rewriting internal/technical language into user-friendly language.",
+                  "Before: Unlimited concurrently editable boards.",
+                  "After: Collaborate in real-time with others on whiteboards, both during and outside of meetings."
+                ],
+                visual: {
+                  type: "image",
+                  src: "/assets/zoom-pricing-3.jpg",
+                  alt: "Before and after copy comparison"
+                },
+                visualPlaceholderText: "Visual: Cards comparing old and new copy."
+              },
+              {
+                id: "pricing-move-4",
+                eyebrow: "Move 4 · Reduce Decision Cost",
+                title: "Expose Price Ranges for Different Plans Upfront",
+                metaPills: [],
+                subtitle: "",
+                bullets: [
+                  "For products with multiple plan tiers, explain the main differences and price ranges for each tier in the Learn more modal.",
+                  "Give users a mental model of 'which tier do I need and roughly how much will it cost' before entering checkout, reducing mid-flow abandonment."
+                ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-pricing-4.mp4"
+                },
+                visualPlaceholderText: "Visual: Price range display for different plans."
               }
-            ]
+            ],
+            resultMetrics: [
+              {
+                label: "Core Add-on Conversion Rate",
+                value: "5% → 15%",
+                description: "Conversion rate for best-selling add-ons increased from 5% to 15%."
+              },
+              {
+                label: "User Interaction with Add-ons Conversion Rate",
+                value: "11% ↑",
+                description: "Users who opened the modal had a higher probability of conversion."
+              }
+            ],
+            contributions: {
+              title: "My Contributions",
+              items: [
+                "Identified key problems and opportunities for add-ons through data and user interviews.",
+                "Coordinated designers across product lines to audit existing interfaces and compile a complete Figma library.",
+                "Designed and delivered 12 complete modal designs.",
+                "Established unified add-on modal standards and promoted their application across pricing page, checkout, and billing center."
+              ]
+            }
           },
           {
             intro: {
               phaseNumber: 2,
               phaseLabel: "Checkout",
-              title: "Streamlining the Purchase Path",
+              title: "Checkout: From 'Long and Messy' to 'Clear and Smooth'",
+              challengeTitle: "Core Challenge: Too Many Fields, Heavy Legacy Burden",
               problems: [
                 {
-                   title: "Friction & Abandonment",
-                   content: [
-                     "High cart abandonment rate (65%) on the payment details page.",
-                     "Users couldn't easily edit their plan selection without restarting.",
-                     "Lack of clear order summary caused trust issues."
-                   ]
+                  title: "User Pain Point: Form Seemed Endless",
+                  content: [
+                    "The original checkout flow was split into 5 steps, each requiring many fields to fill.",
+                    "Funnel data showed significant drop-off at each layer, with low overall conversion rate.",
+                    "User interviews frequently mentioned: 'Seeing so many fields to fill makes me want to close it.'"
+                  ],
+                  image: "/assets/zoom-checkout-challenge-user.jpg",
+                  imageAlt: "User interview feedback"
+                },
+                {
+                  title: "Complex to Push Forward: Dozens of Products, Cross-country Regulations, No One Dared Touch It",
+                  content: [
+                    "Involved dozens of products and hundreds of configurations.",
+                    "Different countries and regions have their own legal and compliance rules.",
+                    "Engineering estimated that changing the entire flow would take years of work."
+                  ],
+                  image: "/assets/zoom-checkout-challenge-push.png",
+                  imageAlt: "Complexity diagram"
                 }
               ],
-              beforeLabel: "Before: Multi-step Checkout",
-              beforePlaceholderText: "Screenshot of a long, scary form with no order summary visible."
+              userQuote: "On the user side, lengthy forms severely reduced purchase intent; but internally, the checkout flow involved many historical issues, making it extremely difficult to push for change.",
+              conclusionLabel: "Conclusion",
+              beforeLabel: "Before: 5-Step Checkout",
+              beforePlaceholderText: "On the user side, lengthy forms severely reduced purchase intent; but internally, the checkout flow involved many historical issues, making it extremely difficult to push for change.",
+            },
+            strategy: {
+              title: "Design Strategy",
+              subtitle: "Simplify Decisions, Incremental Refactoring",
+              userInsight: {
+                content: "From funnel data and interviews, we confirmed problems centered on overly long flows and information overload. We chose to compress steps, using small experiments to prove results and gain space for subsequent refactoring. Then through card-based product configuration and progressive forms to break down massive fields, letting users handle one small piece of information at a time. Finally, for mobile, we reorganized information hierarchy and interaction paths, migrating the same pattern to small screens, so both desktop and mobile can complete purchases with the same clear, lightweight approach."
+              },
+              strategies: [
+                {
+                  title: "Small Validation",
+                  content: "First select the smallest scope, highest impact module for testing, using results to push the team toward bigger changes."
+                },
+                {
+                  title: "Progressive Forms & Card-based",
+                  content: "Use card-based product configuration + progressive forms, presenting information in small chunks to avoid the frustration of 'endless forms'."
+                },
+                {
+                  title: "Mobile Adaptation",
+                  content: "After desktop testing succeeded, migrate the same pattern to mobile so different platforms have the same experience."
+                }
+              ]
             },
             moves: [
               {
                 id: "checkout-move-1",
-                eyebrow: "Move 1 · Sticky Summary",
-                title: "Always-visible context",
-                metaPills: ["UX Pattern", "Trust"],
-                subtitle: "Users need to know what they are paying for at every step.",
+                eyebrow: "Move 1 · MVP Experiment",
+                title: "Minimal Validation: From 5 Steps → 2 Steps",
+                metaPills: ["Cross-team Alignment", "Incremental Validation"],
+                subtitle: "First prove that 'cutting fields and reducing steps' actually works, then secure resources.",
                 bullets: [
-                  "Users were opening new tabs to double-check pricing, and support tickets mentioned 'surprise charges' due to lack of clarity.",
-                  "Implemented a sticky right-rail order summary that updates in real-time with explicit line items for taxes and discounts.",
-                  "Collaborated with the backend team on real-time calculation while advocating for transparency over 'hidden fees'.",
-                  "Designed the responsive behavior of the sticky summary and created the 'edit' interaction for each line item."
+                  "Aligned with PMs, legal, and engineering field by field: which fields are mandatory, which are legacy, which can be filled after purchase.",
+                  "Based on alignment results, created an MVP version with only core fields, compressing the flow to two steps: 1. Product Configuration 2. Account & Payment Information.",
+                  "Result: Conversion rate increased by over ten percentage points; more importantly, it provided team confidence for subsequent more thorough refactoring."
                 ],
-                visualPlaceholderText: "Visual: Sticky Order Summary component on the right side of the form."
+                visual: {
+                  type: "image",
+                  src: "/assets/zoom-checkout-1.png",
+                  alt: "Comparison: 5 steps reduced to 2 steps"
+                },
+                visualPlaceholderText: "Visual: Comparison showing reduction from 5 steps to 2 steps."
+              },
+              {
+                id: "checkout-move-2",
+                eyebrow: "Move 2 · Refactor Core Path",
+                title: "Card-based Products + Progressive Forms",
+                metaPills: ["Information Architecture", "Pattern Documentation"],
+                subtitle: "Upgrade the direction proven by MVP into a reusable design system.",
+                bullets: [
+                  "While MVP improved conversion, it was still 'deleting fields within the old framework,' lacking reusable design language.",
+                  "Encapsulated each product configuration as a collapsible/expandable card, so when adding new products in the future, just add a new card without overhauling the page structure.",
+                  "At any moment, only show the parts that need to be filled, with different user types split early."
+                ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-checkout-2.mp4"
+                },
+                visualPlaceholderText: "Visual: Card-based product configuration + progressive form illustration."
+              },
+              {
+                id: "checkout-move-3",
+                eyebrow: "Move 3 · Mobile Adaptation",
+                title: "Unified Experience with Desktop",
+                metaPills: ["Mobile Experience"],
+                bullets: [
+                  "Designed collapsible order information for small screens, only exposing the amount to pay.",
+                  "Configured targeted keyboards for different input fields, making form filling smoother for users."
+                ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-checkout-3.mp4"
+                },
+                visualPlaceholderText: "Visual: Mobile checkout interface adaptation illustration."
               }
-            ]
+            ],
+            resultMetrics: [
+              {
+                label: "Checkout Conversion Rate",
+                value: "35% ↑",
+                description: "In the core flow refactoring experiment, overall conversion rate increased by approximately 35%."
+              },
+              {
+                label: "Mobile Conversion Rate",
+                value: "5% → 30%",
+                description: "Mobile conversion significantly improved, contributing nearly 15% of revenue."
+              }
+            ],
+            contributions: {
+              title: "My Contributions",
+              items: [
+                "Worked with PMs, engineering, and legal to break down mandatory vs. post-purchase information, advocating for better user experience.",
+                "Built the complete checkout flow from 0 to 1, delivering both desktop and mobile designs.",
+                "Established card-based / progressive form component system, documenting it as a reusable template."
+              ]
+            }
           },
           {
             intro: {
               phaseNumber: 3,
-              phaseLabel: "Subscription Management",
-              title: "Empowering Self-Service",
+              phaseLabel: "Billing",
+              title: "Billing: From 'Can't Understand, Don't Dare Change' to 'See Clearly, Dare to Operate'",
+              challengeTitle: "Core Challenge: Entry Hard to Find, Status Unclear, Permission Logic Opaque",
               problems: [
-                 {
-                   title: "Dependency on Support",
-                   content: [
-                     "Users had to call support to downgrade or cancel.",
-                     "Adding seats required a complex prorated calculation that wasn't shown.",
-                     "Invoices were hard to find and download."
-                   ]
-                 }
+                {
+                  title: "Missing Entry",
+                  content: [
+                    "In the admin panel, designers from each product line added their own tabs, burying subscription and billing entries in second or third-level menus.",
+                    "The vast majority of users didn't know where to manage their subscriptions."
+                  ],
+                  image: "/assets/zoom-billing-challenge-entry.png",
+                  imageAlt: "Missing entry diagram"
+                },
+                {
+                  title: "Messy Information + Unclear Permissions",
+                  content: [
+                    "After entering the page, fields, history records, and status labels were mixed together, with lists and details merged into one.",
+                    "Permission and contract logic was complex. Some users couldn't edit in the frontend, but the interface didn't explain why, causing many support tickets and customer service costs."
+                  ],
+                  image: "/assets/zoom-billing-challenge-info.png",
+                  imageAlt: "Messy information diagram"
+                }
               ],
+              userQuote: "Users had difficulty extracting useful information from the existing design, and even when they did, they didn't know what operations they could perform.",
+              conclusionLabel: "Conclusion",
               beforeLabel: "Before: Admin Panel",
-              beforePlaceholderText: "Screenshot of a 90s style admin table with cryptic button labels."
+              beforePlaceholderText: "Entry buried, information stacked, permissions unclear—users couldn't understand and didn't dare make changes."
+            },
+            strategy: {
+              title: "Design Strategy",
+              subtitle: "Move Entry Forward + Information Layering + Clear Permission Expression",
+              userInsight: {
+                content: "When managing subscriptions, users only want to know: where am I, what do I have, what can I do next."
+              },
+              strategies: [
+                {
+                  title: "Move Entry Forward",
+                  content: "Place the billing entry in the first level of navigation and avatar menu, ensuring users find it immediately."
+                },
+                {
+                  title: "Layered Information Display",
+                  content: "List layer shows 'now'—product, cycle, next charge. Detail layer shows 'all'—configuration, invoices, history."
+                },
+                {
+                  title: "Clear Permission Expression",
+                  content: "Clearly indicate which users can modify online and which need human support, using UI prompts to show next steps."
+                }
+              ]
             },
             moves: [
               {
                 id: "sub-move-1",
-                eyebrow: "Move 1 · Visual Dashboard",
-                title: "Usage at a glance",
-                metaPills: ["Dashboard Design", "Data Viz"],
-                subtitle: "Giving admins clear visibility into their seat usage and billing cycle.",
+                eyebrow: "Move 1 · Move Billing Entry Forward",
+                title: "Modify Information Structure, One-Click Access from Avatar",
+                metaPills: ["Information Architecture", "Discoverability"],
+                subtitle: "Ensure 'I want to change my subscription' can be reached with one click from any entry point.",
                 bullets: [
-                  "Admins were over-purchasing seats because they couldn't see active usage, and billing contacts were often different from system admins.",
-                  "Created a visual dashboard showing seat utilization and upcoming renewals, separating 'Billing' and 'User Management' into distinct but connected views.",
-                  "Led workshops with key account managers to capture pain points and iterated on data visualization styles to match the new brand system.",
-                  "Owned the end-to-end visual design of the dashboard widgets and defined the logic behind the utilization alert states."
+                  "Users frequently asked 'where is my subscription' in support tickets, while the admin panel navigation kept getting filled as product lines expanded.",
+                  "Added a first-level 'Billing / Subscription Management' entry in the admin panel.",
+                  "Added a 'Billing Center' entry in the avatar dropdown for both Zoom client and Web.",
+                  "Conducted quick usability testing with 7 users using Figma prototypes, achieving 100% task success rate."
                 ],
-                visualPlaceholderText: "Visual: Modern dashboard with usage graphs and clear action buttons."
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-billing-1.mp4"
+                },
+                visualPlaceholderText: "Visual: New navigation menu and avatar dropdown entry."
+              },
+              {
+                id: "sub-move-2",
+                eyebrow: "Move 2 · Expose Key Information",
+                title: "List Shows 'Now', Details Show 'All'",
+                metaPills: ["Information Layering", "Clarity"],
+                subtitle: "Collapse excess information, only show current state",
+                bullets: [
+                  "List layer only shows information truly needed for decision-making: product name, current plan / billing cycle, next charge / expiration date, status labels.",
+                  "Defined list/detail hierarchy rules and status label system, making new product additions more standardized."
+                ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-billing-2.mp4"
+                },
+                visualPlaceholderText: "Visual: New subscription list and detail page design."
+              },
+              {
+                id: "sub-move-3",
+                eyebrow: "Move 3 · Permissions at a Glance",
+                title: "Clarify 'Who Can Change Online, Who Must Go Through Human Support'",
+                metaPills: ["Permission Expression", "Support Routing"],
+                subtitle: "Work with PMs and engineering to define clear permission rules, letting users know what to do next.",
+                bullets: [
+                  "Worked with PMs and engineering to establish a clear set of rules: which users can upgrade online, which users must modify through sales or customer support.",
+                  "For scenarios that can be operated online, provide clear action entry points.",
+                  "For scenarios that cannot be operated online, explain the reason and provide next step suggestions."
+                ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-billing-3.mp4"
+                },
+                visualPlaceholderText: "Visual: Permission prompts and routing illustration."
               }
-            ]
+            ],
+            resultMetrics: [
+              {
+                label: "Billing Center Entry Usability Test",
+                value: "100%",
+                description: "All 7 users successfully found the entry."
+              },
+              {
+                label: "Involuntary Churn Rate",
+                value: "7.2% → 5.8%",
+                description: "Churn due to payment failures significantly decreased."
+              }
+            ],
+            contributions: {
+              title: "My Contributions",
+              items: [
+                "Refactored admin panel navigation and client avatar entry, unifying billing entry points.",
+                "Designed list / detail layering and permission prompt patterns, enabling users to confidently make changes online.",
+                "Led subscription card and detail display standards, supporting incremental rollout strategy."
+              ]
+            }
           }
         ],
         patterns: {
-          title: "Patterns & Reusable Components",
-          intro: "To ensure consistency and speed up development, I established a set of reusable patterns for the subscription domain.",
+          title: "Lessons Learned",
+          intro: "This project wasn't a 'one-time major redesign,' but gradually evolved into a unified perspective and reusable assets.",
           patterns: [
             {
-              title: "Pricing Card",
-              description: "A flexible card component that handles tiers, discounts, and feature lists.",
-              myRole: "Component Architecture & Visual Design"
+              title: "Unified Subscription Lifecycle Perspective",
+              description: "Pricing, checkout, and billing are no longer three separate pages, but different nodes in the same journey.",
+              myRole: "Mindset Shift"
             },
             {
-              title: "Order Summary",
-              description: "A responsive summary module used in checkout, upgrades, and invoice views.",
-              myRole: "Interaction Design & States"
+              title: "Reusable Components & Patterns",
+              description: "Add-ons (cards + modals), checkout (card-based + form grouping), billing (list + details).",
+              myRole: "Component Library Development"
             },
             {
-              title: "Empty State",
-              description: "Illustrative empty states that guide users to take action (e.g., 'Add your first user').",
-              myRole: "Illustration Direction"
+              title: "Cross-product Design Standards & Collaboration Mechanisms",
+              description: "UI screenshot acquisition agreements, card information structure standards, new plan integration methods.",
+              myRole: "Process Standardization"
             }
           ]
         },
         reflection: {
-          title: "Reflections",
+          title: "My Learnings",
           learnings: [
-            "The importance of bringing engineering in early to validate pricing logic feasibility.",
-            "How to balance business goals (upsell) with user needs (clarity and trust).",
-            "Documentation is key when handing off complex logic like proration."
+            "From redesigning pages to designing subscription loops: start from subscription models and business goals, then break down to interfaces.",
+            "Making clear trade-offs in highly constrained environments: treat risk control / compliance / tax as design inputs, distinguish what can be changed now, what must be kept, and what can be done in the future.",
+            "Using experiments and data to buy reform space: first validate direction with small MVP experiments, then amplify effects with structural redesigns, letting metrics speak."
           ],
           growth: [
-            "Gained confidence in leading cross-functional workshops.",
-            "Improved my ability to articulate design decisions in terms of business impact.",
-            "Learned to navigate technical constraints without compromising the core user experience."
+            "Learned how to truly connect 'experience' with 'revenue / churn'.",
+            "Stopped assuming 'if there were no risk control and compliance it would be perfect,' instead learned to design within constraints.",
+            "Made it easier for teams to accept and reuse design decisions."
           ]
         }
     }
@@ -480,7 +770,9 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                     "原有购买流程被拆成 5 步，每一步都要填写大量字段。",
                     "从漏斗数据看，每一层都有明显流失，整体转化率低。",
                     "用户访谈高频反馈：「看到这么多要填的，就有点想关掉。」"
-                  ]
+                  ],
+                  image: "/assets/zoom-checkout-challenge-user.jpg",
+                  imageAlt: "用户访谈反馈"
                 },
                 {
                   title: "推进复杂：几十个产品，跨国家法规，谁都不敢动",
@@ -488,7 +780,9 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                     "牵涉几十个产品、上百种配置。",
                     "不同国家地区有各自的法务、合规规则。",
                     "工程评估改动整条流程的工程量要按年计算。"
-                  ]
+                  ],
+                  image: "/assets/zoom-checkout-challenge-push.png",
+                  imageAlt: "推进复杂性示意图"
                 }
               ],
               userQuote: "在用户端，冗长的表单严重拉低购买意愿；但在内部，购买链路牵涉历史问题众多，推动改变极其困难。",
@@ -523,12 +817,17 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 eyebrow: "举措 1 · MVP 实验",
                 title: "从 5 步 → 2 步的最小验证",
                 metaPills: ["跨团队对齐", "增量式验证"],
-                subtitle: "先证明“砍字段、减步骤”真的可行，再争取资源。",
+                subtitle: '先证明"砍字段、减步骤"真的可行，再争取资源。',
                 bullets: [
                   "与 PM、法务、工程逐条对齐：哪些字段是强制填写、哪些是历史遗留、哪些可以完成购买后补充。",
                   "基于对齐结果，做一版仅保留核心字段的 MVP，流程压缩到两步：1. 产品配置 2. 账户与支付信息。",
                   "结果：转化率提升十几个百分点；更重要的是，为后续更彻底的重构提供了团队信心。"
                 ],
+                visual: {
+                  type: "image",
+                  src: "/assets/zoom-checkout-1.png",
+                  alt: "从 5 步缩减到 2 步的对比方案"
+                },
                 visualPlaceholderText: "视觉：从 5 步缩减到 2 步的对比方案。"
               },
               {
@@ -538,10 +837,14 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 metaPills: ["信息架构", "模式沉淀"],
                 subtitle: "把 MVP 证明过的方向，升级为可复用的设计系统。",
                 bullets: [
-                  "MVP 虽然提升了转化，但仍是“老框架里删字段”，缺少可复用的设计语言。",
+                  'MVP 虽然提升了转化，但仍是"老框架里删字段"，缺少可复用的设计语言。',
                   "将每个产品配置封装为可折叠/展开的卡片，未来新增产品时，只需新增一张卡片，不必推翻页面结构。",
                   "任何时刻只展示当前需要填写的部分，不同类型用户提前分流。"
                 ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-checkout-2.mp4"
+                },
                 visualPlaceholderText: "视觉：卡片化产品配置 + 渐进式表单示意。"
               },
               {
@@ -553,6 +856,10 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                   "针对小屏幕设计可折叠的订单信息，只外露需要支付的金额。",
                   "为不同输入框配置针对性的键盘，用户填写表单更丝滑。"
                 ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-checkout-3.mp4"
+                },
                 visualPlaceholderText: "视觉：移动端结账界面适配示意。"
               }
             ],
@@ -589,14 +896,18 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                   content: [
                     "管理员后台中，各产品线设计师各自添加 Tab，订阅与计费入口深埋在二 / 三层菜单里。",
                     "绝大多数用户不知道去哪儿管理自己的订阅。"
-                  ]
+                  ],
+                  image: "/assets/zoom-billing-challenge-entry.png",
+                  imageAlt: "入口缺失示意图"
                 },
                 {
                   title: "信息杂乱 + 权限不明",
                   content: [
                     "进入页面后字段、历史记录、状态标签混在一起，列表与详情混为一体。",
                     "权限与合约逻辑复杂，有些用户在前台不可编辑，但界面并没有解释，造成大量客诉与客服成本。"
-                  ]
+                  ],
+                  image: "/assets/zoom-billing-challenge-info.png",
+                  imageAlt: "信息杂乱示意图"
                 }
               ],
               userQuote: "用户很难从现有设计中获取有效信息，即便获取到了，也不知道能进行说明操作。",
@@ -631,13 +942,17 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                 eyebrow: "举措 1 · 订阅入口前移",
                 title: "修改信息结构，头像一键触达",
                 metaPills: ["信息架构", "可发现性"],
-                subtitle: "确保“我要改订阅”这件事，在任何入口都能一键到达。",
+                subtitle: '确保"我要改订阅"这件事，在任何入口都能一键到达。',
                 bullets: [
-                  "用户在客服单里频繁询问“订阅在哪”，而管理后台导航随着产品线扩张被不断塞满。",
+                  '用户在客服单里频繁询问"订阅在哪"，而管理后台导航随着产品线扩张被不断塞满。',
                   "在管理员后台加入一级「订阅 / 计费管理」入口。",
                   "在 Zoom 客户端与 Web 端的头像下拉里新增「订阅中心」入口。",
                   "通过 Figma 原型快速对 7 名用户做可用性测试，任务成功率 100%。"
                 ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-billing-1.mp4"
+                },
                 visualPlaceholderText: "视觉：新的导航菜单和头像下拉入口。"
               },
               {
@@ -650,6 +965,10 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                   "列表层只展示决策当下真正需要的信息：产品名称、当前计划 / 计费周期、下一次扣费 / 到期时间、状态标签。",
                   "定义列表/详情的层级规则与状态标签系统，让新产品添加更规范。"
                 ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-billing-2.mp4"
+                },
                 visualPlaceholderText: "视觉：新的订阅列表和详情页设计。"
               },
               {
@@ -663,6 +982,10 @@ export const zoomProjectData: { en: UnifiedProject; zh: UnifiedProject } = {
                   "对可以在线操作的场景提供明确的操作入口。",
                   "对不能在线操作的场景告知原因，给出下一步建议。"
                 ],
+                visual: {
+                  type: "video",
+                  src: "/assets/zoom-billing-3.mp4"
+                },
                 visualPlaceholderText: "视觉：权限提示与分流示意。"
               }
             ],
