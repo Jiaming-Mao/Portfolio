@@ -9,6 +9,9 @@ export type Project = UnifiedProject;
 
 export const dictionary = {
   en: {
+    site: {
+      title: "Jiaming Mao - Product Designer",
+    },
     nav: {
       work: 'Work',
       about: 'About',
@@ -86,6 +89,9 @@ export const dictionary = {
     },
   },
   zh: {
+    site: {
+      title: "毛嘉鸣 - UX 设计师",
+    },
     nav: {
       work: '作品',
       about: '关于',
